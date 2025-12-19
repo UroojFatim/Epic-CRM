@@ -1,0 +1,21 @@
+.o_web_client {
+    
+    --brand-secondary: #50e3c2;
+    --brand-accent: #f5a623;
+    --brand-header-bg: #2c3e50;
+
+    background-color: var(--brand-secondary);
+}
+
+.o_main_navbar {
+    background-color: var(--brand-header-bg) !important;
+}
+
+.o_control_panel {
+    background-color: var(--brand-primary) !important;
+    color: white;
+}
+
+.o_form_view .o_form_sheet_bg {
+    border-top: 3px solid var(--brand-accent);
+}

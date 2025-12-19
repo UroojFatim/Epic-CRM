@@ -1,0 +1,27 @@
+
+$o-brand-odoo: #875A7B;
+
+
+body.o_web_client {
+  &[data-theme-color="dark"] {
+    --o-brand-primary: #222;
+    --o-brand-secondary: #444;
+    background-color: #1e1e1e !important;
+    color: #f0f0f0 !important;
+  }
+
+  &[data-theme-color="blue"] {
+    --o-brand-primary: #007bff;
+    --o-brand-secondary: #0056b3;
+  }
+
+  &[data-theme-color="green"] {
+    --o-brand-primary: #28a745;
+    --o-brand-secondary: #1e7e34;
+  }
+
+  &[data-theme-color="red"] {
+    --o-brand-primary: #dc3545;
+    --o-brand-secondary: #a71d2a;
+  }
+}

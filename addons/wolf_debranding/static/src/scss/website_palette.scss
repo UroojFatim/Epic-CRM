@@ -1,0 +1,12 @@
+/* Custom palette for Website color system */
+$o-color-palettes: map-merge($o-color-palettes,
+  (
+    'woa': (
+      'o-color-1': #000000, // black
+      'o-color-2': #D0021B, // red
+      'o-color-3': #FFFFFF, // white
+      'o-color-4': #1a1a1a, // dark gray
+      'o-color-5': #f2f2f2  // near-white
+    ),
+  )
+);

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inject custom CSS variables into Odoo backend -->
+    <template id="web_theme_custom_inject_style" inherit_id="web.webclient_bootstrap" priority="20">
+        <xpath expr="//head" position="inside">
+            <style type="text/css">
+                :root {
+                    --wb-primary: <t t-esc="request.env['ir.config_parameter'].sudo().get_param('web_theme_custom.primary', '#2b90d9')"/>;
+                    --wb-secondary: <t t-esc="request.env['ir.config_parameter'].sudo().get_param('web_theme_custom.secondary', '#ffffff')"/>;
+                    --wb-accent: <t t-esc="request.env['ir.config_parameter'].sudo().get_param('web_theme_custom.accent', '#ff7b7b')"/>;
+                    --wb-header-bg: <t t-esc="request.env['ir.config_parameter'].sudo().get_param('web_theme_custom.header_bg', '#2b90d9')"/>;
+                }
+
+                .o_main_navbar, header.o_main_navbar {
+                    background: var(--wb-header-bg) !important;
+                }
+
+                .o_menu_sections .o_menu_section .o_menu_section_header {
+                    background: linear-gradient(90deg, var(--wb-primary), var(--wb-header-bg)) !important;
+                }
+
+                .o_form_sheet_bg {
+                    background: var(--wb-secondary) !important;
+                }
+
+                .btn.btn-primary, .o_button_import {
+                    background-color: var(--wb-primary) !important;
+                    border-color: var(--wb-primary) !important;
+                    color: #fff !important;
+                }
+
+                .btn.btn-secondary {
+                    background-color: var(--wb-accent) !important;
+                    border-color: var(--wb-accent) !important;
+                    color: #fff !important;
+                }
+
+                <!-- Dark mode -->
+                <t t-if="request.env['ir.config_parameter'].sudo().get_param('web_theme_custom.theme') == 'dark'">
+                body {
+                    background: #0f1113;
+                    color: #e6e6e6;
+                }
+                .o_form_sheet_bg { background: #121316 !important; }
+                .o_main_navbar, header.o_main_navbar { background: #0b0c0d !important; }
+                .o_control_panel, .o_control_panel .btn {
+                    background: transparent !important;
+                }
+                </t>
+            </style>
+        </xpath>
+    </template>
+</odoo>

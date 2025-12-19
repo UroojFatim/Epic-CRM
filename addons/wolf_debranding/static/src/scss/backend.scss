@@ -1,0 +1,227 @@
+/* ===== WolfOfArchesCRM backend theme ===== */
+
+/* ---- brand vars: replace any "odoo purple" helpers ---- */
+:root {
+  --o-brand-odoo: #D0021B;
+  --o-brand-primary: #D0021B;
+}
+.text-odoo { color: #D0021B !important; }
+.bg-odoo   { background-color: #000000 !important; color: #D0021B !important; }
+
+/* ---- TOP BARS ---- */
+.o_main_navbar,
+.o_menu_sections {
+  background-color: #000000 !important;  /* black */
+  color: #D0021B !important;             /* red text/icons */
+  border-bottom: 1px solid #111111 !important;
+}
+
+/* text/icons */
+.o_main_navbar a,
+.o_main_navbar .dropdown-toggle,
+.o_main_navbar .o_menu_brand,
+.o_main_navbar .o_menu_systray > *,
+.o_main_navbar .o_menu_toggle .fa,
+.o_main_navbar .fa, .o_main_navbar svg,
+
+.o_menu_sections .nav-link,
+.o_menu_sections .o_menu_entry {
+  color: #D0021B !important;
+}
+
+/* ===== KILL ALL PURPLE IN SECTION TABS ===== */
+/* bootstrap pill var (some builds use this) */
+.o_menu_sections {
+  --bs-nav-pills-link-active-bg: #000000;
+}
+
+/* default: black bg, red text (no gradients) */
+.o_menu_sections .nav,
+.o_menu_sections .nav-pills,
+.o_menu_sections .nav-item,
+.o_menu_sections .nav-link {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  background-image: none !important;
+  color: #D0021B !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* hover/active: keep black bg, flip text to white */
+.o_menu_sections .nav-link:hover,
+.o_menu_sections .nav-link:focus,
+.o_menu_sections .nav-pills .nav-link.active,
+.o_menu_sections .nav-link.active,
+.o_menu_sections .nav-item.show > .nav-link {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  box-shadow: none !important;
+}
+
+/* remove any decorative overlays some themes add */
+.o_menu_sections .nav-link::before,
+.o_menu_sections .nav-link::after {
+  display: none !important;
+  content: '' !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* dropdown in section bar */
+.o_menu_sections .dropdown-menu {
+  background-color: #000000 !important;
+  border-color: #111111 !important;
+}
+.o_menu_sections .dropdown-item {
+  color: #D0021B !important;
+  background-color: transparent !important;
+}
+.o_menu_sections .dropdown-item:hover,
+.o_menu_sections .dropdown-item:focus,
+.o_menu_sections .dropdown-item.active {
+  background-color: #111111 !important;
+  color: #FFFFFF !important;
+}
+
+/* ---- SEARCH in top bar ---- */
+.o_main_navbar .o_searchview .o_searchview_input {
+  background: transparent !important;
+  color: #D0021B !important;
+  border-color: #D0021B !important;
+  caret-color: #D0021B !important;
+}
+.o_main_navbar .o_searchview .o_searchview_input::placeholder {
+  color: rgba(208,2,27,0.85) !important;
+}
+.o_main_navbar .o_searchview .o_searchview_facet {
+  background: rgba(208,2,27,0.15) !important;
+  border-color: rgba(208,2,27,0.35) !important;
+  color: #D0021B !important;
+}
+
+/* ---- PRIMARY ACTIONS ---- */
+.btn-primary,
+.o_form_button_save,
+.o_statusbar_buttons .btn-primary,
+.o_chatter_topbar .btn-primary {
+  background-color: #D0021B !important;
+  border-color: #D0021B !important;
+  color: #FFFFFF !important;
+}
+
+/* ---- Accents elsewhere ---- */
+a, .text-primary, .badge-primary, .o_stat_value, .o_kanban_counter {
+  color: #D0021B !important;
+}
+
+/* ---- Focus/selection ---- */
+.form-control:focus,
+.o_searchview_input:focus {
+  border-color: #D0021B !important;
+  box-shadow: 0 0 0 0.2rem rgba(208, 2, 27, .25) !important;
+}
+
+/* ---- Progress & tags ---- */
+.progress-bar,
+.o_field_widget .o_tag_color_0,
+.o_field_widget .o_tag_badge {
+  background-color: #D0021B !important;
+  color: #FFFFFF !important;
+}
+
+/* ---- Hide leftover brand promos ---- */
+.o_brand_promotion, .o_brand_promotion_message, .o_brand_footer {
+  display: none !important;
+}
+
+/* === FINAL: kill all purple on second-level nav everywhere === */
+
+/* Override Bootstrap vars used by nav-pills (covers many themes/builds) */
+:root {
+  --bs-nav-pills-link-active-bg: #000000 !important;
+  --bs-nav-pills-link-active-color: #FFFFFF !important;
+}
+
+/* Default state: black bg + red text */
+.nav.nav-pills .nav-link,
+.o_menu_sections .nav.nav-pills .nav-link,
+.o_menu_sections .nav-item > .nav-link,
+.o_menu_sections .nav-link {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  background-image: none !important;
+  color: #D0021B !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Hover/active/focus: keep black bg, turn text white */
+.nav.nav-pills .nav-link:hover,
+.nav.nav-pills .nav-link:focus,
+.nav.nav-pills .nav-link.active,
+.nav.nav-pills .show > .nav-link,
+
+.o_menu_sections .nav-link:hover,
+.o_menu_sections .nav-link:focus,
+.o_menu_sections .nav-link.active,
+.o_menu_sections .nav-item.show > .nav-link {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  box-shadow: none !important;
+}
+
+/* Nuke any decorative overlays/gradients that may reintroduce purple */
+.o_menu_sections .nav-link::before,
+.o_menu_sections .nav-link::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Dropdown inside the sections bar */
+.o_menu_sections .dropdown-menu {
+  background-color: #000000 !important;
+  border-color: #111111 !important;
+}
+.o_menu_sections .dropdown-item {
+  color: #D0021B !important;
+  background-color: transparent !important;
+}
+.o_menu_sections .dropdown-item:hover,
+.o_menu_sections .dropdown-item:focus,
+.o_menu_sections .dropdown-item.active {
+  background-color: #111111 !important;
+  color: #FFFFFF !important;
+}
+
+/* Hide Settings footer lines if the browser supports :has() */
+.o_form_view .o_form_sheet :is(small, p, div):has(a[href*="odoo.com"]) { 
+  display: none !important; 
+}
+/* ===== Global (non-topbar) search & inputs — remove purple focus ===== */
+.o_control_panel .o_searchview .o_searchview_input,
+.o_searchview .o_searchview_input {
+  caret-color: #D0021B !important;
+}
+
+.o_control_panel .o_searchview .o_searchview_input:focus,
+.o_searchview .o_searchview_input:focus,
+input.form-control:focus,
+textarea.form-control:focus,
+select.form-select:focus {
+  border-color: #D0021B !important;
+  box-shadow: 0 0 0 0.2rem rgba(208, 2, 27, .25) !important; /* red, not purple */
+}
+
+/* facets (chips) in the control panel search */
+.o_control_panel .o_searchview .o_searchview_facet,
+.o_searchview .o_searchview_facet {
+  background: rgba(208, 2, 27, 0.12) !important;
+  border-color: rgba(208, 2, 27, 0.35) !important;
+  color: #D0021B !important;
+}

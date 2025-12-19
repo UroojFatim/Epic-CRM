@@ -1,0 +1,15 @@
+<odoo>
+  <!-- Backend login / generic brand message -->
+  <template id="woa_brand_promo_msg" inherit_id="web.brand_promotion_message">
+    <xpath expr="." position="replace">
+      <t t-esc="''"/>
+    </xpath>
+  </template>
+
+  <!-- Generic backend brand promo container -->
+  <template id="woa_brand_promo" inherit_id="web.brand_promotion">
+    <xpath expr="." position="replace">
+      <t t-esc="''"/>
+    </xpath>
+  </template>
+</odoo>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_telephony_account_form" model="ir.ui.view">
+    <field name="name">telephony.account.form</field>
+    <field name="model">telephony.account</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="company_id"/>
+            <field name="provider" readonly="1"/>
+            <field name="public_base_url"/>
+            <field name="tenant_token" readonly="1"/>
+          </group>
+          <group string="Provider Credentials">
+            <field name="account_sid"/>
+            <field name="auth_token" password="True"/>
+            <field name="default_sms_from"/>
+            <field name="default_voice_from"/>
+            <field name="default_agent_number"/>
+          </group>
+          <group string="Behavior">
+            <field name="bot_on_inbound"/>
+            <field name="bot_on_outbound"/>
+            <field name="dry_run"/>
+          </group>
+          <group string="Webhook Endpoints (read-only)">
+            <label string="Voice Inbound"/>
+            <div>
+              <p>
+                <span>Base:</span>
+                <span t-field="public_base_url"/>
+              </p>
+              <p>
+                <span>Inbound:</span>
+                <span> /t/<t t-esc="tenant_token"/>/twilio/voice/inbound</span>
+              </p>
+              <p>
+                <span>Voice Status:</span>
+                <span> /t/<t t-esc="tenant_token"/>/twilio/voice/status</span>
+              </p>
+              <p>
+                <span>SMS Status:</span>
+                <span> /t/<t t-esc="tenant_token"/>/twilio/sms/status</span>
+              </p>
+            </div>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_telephony_account" model="ir.actions.act_window">
+    <field name="name">Telephony Accounts</field>
+    <field name="res_model">telephony.account</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem id="menu_telephony_root" name="Telephony" parent="crm.crm_menu_root"/>
+  <menuitem id="menu_telephony_accounts" name="Accounts" parent="menu_telephony_root" action="action_telephony_account"/>
+</odoo>

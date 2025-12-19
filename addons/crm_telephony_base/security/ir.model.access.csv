@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+acc_telephony_account,acc_telephony_account,model_telephony_account,base.group_system,1,1,1,1
+acc_telephony_number,acc_telephony_number,model_telephony_number,base.group_system,1,1,1,1
+acc_telephony_message,acc_telephony_message,model_telephony_message,base.group_user,1,0,0,0
+acc_telephony_call,acc_telephony_call,model_telephony_call,base.group_user,1,0,0,0

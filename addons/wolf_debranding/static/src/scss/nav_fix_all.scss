@@ -1,0 +1,270 @@
+/* === Keep brand vars consistent (safe) === */
+:root, :root[data-theme="light"], :root[data-theme="dark"] {
+  --o-brand-odoo: #D0021B !important;
+  --o-brand-primary: #D0021B !important;
+  --bs-primary: #D0021B !important;
+  --o-brand-odoo-rgb: 208, 2, 27 !important;
+  --o-brand-primary-rgb: 208, 2, 27 !important;
+  --bs-primary-rgb: 208, 2, 27 !important;
+}
+
+/* ================= SECOND ROW (app sections) ================= */
+.o_menu_sections,
+.o_menu_sections .nav,
+.o_menu_sections .nav-pills,
+.o_menu_sections .nav-tabs {
+  background: #000 !important;
+  background-color: #000 !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* kill any decorative wrappers/pseudos that can paint purple */
+.o_menu_sections::before,
+.o_menu_sections::after,
+.o_menu_sections .nav::before,
+.o_menu_sections .nav::after,
+.o_menu_sections .nav-pills::before,
+.o_menu_sections .nav-pills::after,
+.o_menu_sections .nav-tabs::before,
+.o_menu_sections .nav-tabs::after {
+  content: none !important;
+  display: none !important;
+}
+
+.o_menu_sections .nav-item,
+.o_menu_sections .nav-link {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #D0021B !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* highest-specificity hammer for purple "chip" on active */
+.o_menu_sections .nav.nav-pills > .nav-item > .nav-link.active,
+.o_menu_sections .nav.nav-tabs  > .nav-item > .nav-link.active,
+.o_menu_sections .nav-link.active,
+.o_menu_sections .nav-item.show > .nav-link,
+.o_menu_sections .nav-link:hover,
+.o_menu_sections .nav-link:focus {
+  color: #fff !important;
+  background: #000 !important;
+  background-color: #000 !important;
+  border-color: #000 !important;
+}
+
+.o_menu_sections .nav-link::before,
+.o_menu_sections .nav-link::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* dropdown inside second row */
+.o_menu_sections .dropdown-menu {
+  background-color: #000 !important;
+  border-color: #111 !important;
+}
+.o_menu_sections .dropdown-item { color: #D0021B !important; }
+.o_menu_sections .dropdown-item:hover,
+.o_menu_sections .dropdown-item:focus,
+.o_menu_sections .dropdown-item.active {
+  background-color: #111 !important; color: #fff !important;
+}
+
+/* ================= CONTROL PANEL (leave light, but de-purple) ================= */
+/* background stays default */
+.o_control_panel { background: unset !important; background-color: unset !important; }
+
+/* tabs/pills: remove purple backgrounds/gradients; keep text red */
+.o_control_panel .o_cp_switch_buttons .nav-link,
+.o_control_panel .nav-tabs .nav-link,
+.o_control_panel .nav-pills .nav-link {
+  background: transparent !important;
+  background-image: none !important;
+  color: #D0021B !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.o_control_panel .o_cp_switch_buttons .nav-link.active,
+.o_control_panel .nav-tabs .nav-link.active,
+.o_control_panel .nav-pills .nav-link.active,
+.o_control_panel .o_cp_switch_buttons .nav-item.show > .nav-link {
+  background: transparent !important;
+  color: #D0021B !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* kill purple from wrappers/pseudos above/below the tabs */
+.o_control_panel::before,
+.o_control_panel::after,
+.o_control_panel .nav::before,
+.o_control_panel .nav::after,
+.o_control_panel .nav-tabs::before,
+.o_control_panel .nav-tabs::after,
+.o_control_panel .nav-pills::before,
+.o_control_panel .nav-pills::after {
+  content: none !important;
+  display: none !important;
+}
+/* FINAL hammer for purple coming from the LI wrappers (what you see before hover)
+   Many Odoo themes color the <li.nav-item> and/or its pseudos, not the <a.nav-link>. */
+
+body .o_web_client .o_menu_sections .nav,
+body .o_web_client .o_menu_sections .nav.nav-pills,
+body .o_web_client .o_menu_sections .nav.nav-tabs {
+  background: #000 !important;
+  background-color: #000 !important;
+  background-image: none !important;
+}
+
+/* The actual culprit: the wrapper <li> (shows purple before hover) */
+body .o_web_client .o_menu_sections .nav > .nav-item {
+  background: #000 !important;
+  background-color: #000 !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* Some themes draw the color on LI pseudos — remove them */
+body .o_web_client .o_menu_sections .nav > .nav-item::before,
+body .o_web_client .o_menu_sections .nav > .nav-item::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Keep link text red by default, white on active/hover (unchanged) */
+body .o_web_client .o_menu_sections .nav > .nav-item > .nav-link {
+  background: #000 !important;
+  background-color: #000 !important;
+  color: #D0021B !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+body .o_web_client .o_menu_sections .nav > .nav-item > .nav-link:hover,
+body .o_web_client .o_menu_sections .nav > .nav-item > .nav-link:focus,
+body .o_web_client .o_menu_sections .nav > .nav-item > .nav-link.active,
+body .o_web_client .o_menu_sections .nav > .nav-item.show > .nav-link {
+  color: #fff !important;
+  background: #000 !important;
+  background-color: #000 !important;
+  border-color: #000 !important;
+}
+
+/* Safety: some builds add a colored underline/overlay on the tabs container */
+body .o_web_client .o_menu_sections .nav::before,
+body .o_web_client .o_menu_sections .nav::after {
+  content: none !important;
+  display: none !important;
+}
+/* ===== FINAL: ban purple at the wrapper level ===== */
+
+/* The bar itself stays black */
+.o_menu_sections {
+  background: #000 !important;
+  background-color: #000 !important;
+
+  /* Make all nav-related CSS variables safe in this scope */
+  --bs-nav-link-color: #D0021B !important;
+  --bs-nav-link-hover-color: #FFFFFF !important;
+  --bs-nav-pills-link-active-bg: transparent !important;  /* no purple chip */
+  --bs-nav-pills-link-active-color: #FFFFFF !important;
+  --o-brand-odoo: #D0021B !important;
+  --o-brand-primary: #D0021B !important;
+}
+
+/* 1) Neutralize backgrounds on ALL wrappers under the tabs */
+.o_menu_sections :is(.nav, .nav.nav-pills, .nav.nav-tabs) > :is(.nav-item, .o_menu_entry, .o_menu_entry_wrap) {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* 2) Kill wrapper pseudo-layers that often paint the purple strip */
+.o_menu_sections :is(.nav, .nav.nav-pills, .nav.nav-tabs) > :is(.nav-item, .o_menu_entry, .o_menu_entry_wrap)::before,
+.o_menu_sections :is(.nav, .nav.nav-pills, .nav.nav-tabs) > :is(.nav-item, .o_menu_entry, .o_menu_entry_wrap)::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* 3) Links: transparent bg, red text; white on hover/active */
+.o_menu_sections :is(.nav-link, .o_menu_entry) {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #D0021B !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.o_menu_sections :is(.nav-link, .o_menu_entry):is(:hover, :focus, .active, [aria-current="page"]) {
+  color: #FFFFFF !important;
+  background: transparent !important;   /* still transparent; container is black */
+  border-color: transparent !important;
+}
+
+/* 4) Remove any container-level decoration lines */
+.o_menu_sections :is(.nav, .nav.nav-pills, .nav.nav-tabs)::before,
+.o_menu_sections :is(.nav, .nav.nav-pills, .nav.nav-tabs)::after {
+  content: none !important;
+  display: none !important;
+}
+
+
+/* ----- KILL THE PURPLE CHIP ON NAV ENTRIES (wrapper rule you found) ----- */
+/* Make the second-row container black, keep entries transparent */
+body .o_web_client .o_main_navbar .o_menu_sections {
+  background: #000 !important;
+  background-color: #000 !important;
+
+  /* Neutralize Odoo's var-based purple chip (and common variants) */
+  --NavBar-entry-backgroundColor: transparent !important;
+  --NavBar-entry-hover-backgroundColor: transparent !important;
+  --NavBar-entry-active-backgroundColor: transparent !important;
+  --NavBar-entrySelected-backgroundColor: transparent !important;
+}
+
+/* Block the fallback color (#71639e) and any late var changes */
+body .o_web_client .o_main_navbar .o_menu_sections .o_nav_entry,
+body .o_web_client .o_main_navbar .o_menu_sections .dropdown-toggle {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 1px solid transparent !important;
+  color: #D0021B !important;                 /* red by default */
+}
+
+/* Hover/active: keep background transparent, flip text to white */
+body .o_web_client .o_main_navbar .o_menu_sections .o_nav_entry:hover,
+body .o_web_client .o_main_navbar .o_menu_sections .o_nav_entry:focus,
+body .o_web_client .o_main_navbar .o_menu_sections .o_nav_entry.active,
+body .o_web_client .o_main_navbar .o_menu_sections .dropdown-toggle:hover,
+body .o_web_client .o_main_navbar .o_menu_sections .dropdown-toggle:focus,
+body .o_web_client .o_main_navbar .o_menu_sections .dropdown-toggle.show {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #FFFFFF !important;                 /* white on hover/active */
+}
+
+/* Safety: some themes paint purple on <li> wrappers or pseudos */
+body .o_web_client .o_main_navbar .o_menu_sections .nav > .nav-item,
+body .o_web_client .o_main_navbar .o_menu_sections .nav > .o_menu_entry_wrap {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+body .o_web_client .o_main_navbar .o_menu_sections .nav > .nav-item::before,
+body .o_web_client .o_main_navbar .o_menu_sections .nav > .nav-item::after,
+body .o_web_client .o_main_navbar .o_menu_sections .nav::before,
+body .o_web_client .o_main_navbar .o_menu_sections .nav::after {
+  content: none !important;
+  display: none !important;
+}

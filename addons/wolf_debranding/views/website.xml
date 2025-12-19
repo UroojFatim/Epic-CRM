@@ -1,0 +1,17 @@
+<odoo>
+  <!-- Website footer promo -->
+  <template id="woa_website_brand_promo" inherit_id="website.brand_promotion">
+    <xpath expr="." position="replace">
+      <t t-esc="''"/>
+    </xpath>
+  </template>
+
+  <!-- Optional: brand header above login form (keep only if you want this) -->
+  <template id="woa_login_layout" inherit_id="website.login_layout" priority="20">
+    <xpath expr="//div[hasclass('oe_website_login_container')]" position="before">
+      <div class="woa-login-brand" style="text-align:center;margin:24px 0;">
+        <img src="/wolf_debranding/static/src/img/wolflogo.png" style="height:54px;" alt="WolfOfArchesCRM"/>
+      </div>
+    </xpath>
+  </template>
+</odoo>

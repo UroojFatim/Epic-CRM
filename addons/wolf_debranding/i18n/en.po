@@ -1,0 +1,28 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wolf_debranding\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-01 00:00+0000\n"
+"PO-Revision-Date: 2025-01-01 00:00+0000\n"
+"Last-Translator: Wolf of Arches <support@wolfofarches.com>\n"
+"Language-Team: English (US)\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. module: web
+msgid "Odoo"
+msgstr "WolfOfArchesCRM"
+
+#. module: web
+msgid "My Odoo.com account"
+msgstr "My WolfOfArchesCRM account"
+
+#. module: web
+msgid "About Odoo"
+msgstr "About WolfOfArchesCRM"
+
+#. module: web
+msgid "Powered by Odoo"
+msgstr ""
