@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="crm_lead_view_form_inherit_twilio_buttons" model="ir.ui.view">
+        <field name="name">crm.lead.view.form.inherit.twilio.buttons</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Replace phone field to remove default widget -->
+            <xpath expr="//field[@name='phone']" position="replace">
+                <field name="phone" widget="char" class="o_field_phone"/>
+            </xpath>
+
+            <!-- Replace mobile field to remove default widget -->
+            <xpath expr="//field[@name='mobile']" position="replace">
+                <field name="mobile" widget="char" class="o_field_phone"/>
+            </xpath>
+
+            <!-- Add custom Twilio buttons after phone field -->
+            <xpath expr="//field[@name='phone']" position="after">
+                <button name="action_twilio_call"
+                        type="object"
+                        class="oe_link text-danger ms-2"
+                        groups="twilio_crm_communication.group_twilio_user"
+                        invisible="not phone and not mobile">
+                    <i class="fa fa-phone text-danger"/>
+                    <span class="ms-1">Call</span>
+                </button>
+                <button name="action_twilio_sms"
+                        type="object"
+                        class="oe_link text-danger ms-2"
+                        groups="twilio_crm_communication.group_twilio_user"
+                        invisible="not phone and not mobile">
+                    <i class="fa fa-comment text-danger"/>
+                    <span class="ms-1">SMS</span>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>
