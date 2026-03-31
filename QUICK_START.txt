@@ -1,0 +1,76 @@
+╔════════════════════════════════════════════════════════════════════════╗
+║           TWILIO CRM COMMUNICATION - QUICK START                       ║
+╚════════════════════════════════════════════════════════════════════════╝
+
+📦 INSTALL THE MODULE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   Option 1 (Easiest):
+   → Run: .\install_twilio.ps1
+
+   Option 2 (Manual):
+   → python odoo-bin -c odoo.conf -d epiccrm -i twilio_crm_communication
+
+   Option 3 (UI):
+   → Apps → Update Apps List (⟳) → Search "Twilio" → Install
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚙️  CONFIGURE TWILIO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   1. Install: pip install twilio
+
+   2. Settings → Twilio (CRM Calls & SMS)
+
+   3. Fill in:
+      • Account SID
+      • Auth Token
+      • From Number (E.164: +14155552671)
+      • Webhook Base URL (https://your-domain.com)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👥 ASSIGN PERMISSIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   Settings → Users → Select user → Access Rights
+   → Find "CRM" category → Set "Twilio User" or "Twilio Admin"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📞 MAKE CALLS & SEND SMS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   1. Open any CRM Lead/Opportunity with phone number
+   2. Look for red "📞 Call" and "💬 SMS" buttons
+   3. Click to use!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 VIEW LOGS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   CRM → Configuration → Twilio → SMS Logs / Call Logs
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️  TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   Module not showing?
+   → Click "Update Apps List" in Apps menu!
+
+   No Call/SMS buttons?
+   → Check user has "Twilio User" permission
+   → Check lead has phone or mobile number
+
+   API errors?
+   → Verify Twilio credentials in Settings
+   → Check phone numbers are E.164 format (+country code)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 Documentation: See README.md and INSTALL_SUMMARY.md
+
+╚════════════════════════════════════════════════════════════════════════╝

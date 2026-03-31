@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_twilio_sms_log_user,twilio.sms.log user,model_twilio_sms_log,twilio_crm_communication.group_twilio_user,1,0,1,0
+access_twilio_call_log_user,twilio.call.log user,model_twilio_call_log,twilio_crm_communication.group_twilio_user,1,0,1,0
+access_twilio_sms_log_admin,twilio.sms.log admin,model_twilio_sms_log,twilio_crm_communication.group_twilio_admin,1,1,1,1
+access_twilio_call_log_admin,twilio.call.log admin,model_twilio_call_log,twilio_crm_communication.group_twilio_admin,1,1,1,1
+access_twilio_sms_wizard_user,twilio.sms.wizard user,model_twilio_sms_wizard,twilio_crm_communication.group_twilio_user,1,1,1,0
+access_twilio_sms_wizard_admin,twilio.sms.wizard admin,model_twilio_sms_wizard,twilio_crm_communication.group_twilio_admin,1,1,1,0
